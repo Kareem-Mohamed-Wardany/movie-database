@@ -1,0 +1,22 @@
+<section class="actor-section">
+  <a routerLink="/admin/actors/add" class="add-button">Add Actor</a>
+
+  <div class="actor-grid">
+    @for (actor of actors(); track actor.id) {
+    <div class="actor-card">
+      <img [src]="actor.image" [alt]="actor.name" class="actor-img" />
+
+      <h3>{{ actor.name }}</h3>
+
+      <div class="actor-actions">
+        <button class="action-button update" (click)="onUpdate(actor.id)">
+          Update
+        </button>
+        <button class="action-button delete" (click)="onDelete(actor.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</section>

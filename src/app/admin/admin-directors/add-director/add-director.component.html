@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-section">
+  <label for="name">Director Name</label>
+  <input type="text" id="name" formControlName="name" />
+  <div
+    *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+    class="error"
+  >
+    Name must be between 5–50 characters.
+  </div>
+
+  <label for="birthDate">Birth Date</label>
+  <input type="date" id="birthDate" formControlName="birthDate" />
+  <div
+    *ngIf="form.get('birthDate')?.invalid && form.get('birthDate')?.touched"
+    class="error"
+  >
+    Birth date is required.
+  </div>
+
+  <label for="imageFile">Director Image</label>
+  <input
+    type="file"
+    id="imageFile"
+    (change)="onFileSelected($event)"
+    accept="image/*"
+  />
+  <div
+    *ngIf="form.get('imageFile')?.invalid && form.get('imageFile')?.touched"
+    class="error"
+  >
+    Image is required.
+  </div>
+
+  <div *ngIf="imagePreview" class="preview-container">
+    <p>Preview:</p>
+    <img [src]="imagePreview" alt="Image Preview" class="preview-image" />
+  </div>
+
+  <button type="submit" [disabled]="form.invalid" class="submit-button">
+    Add
+  </button>
+</form>

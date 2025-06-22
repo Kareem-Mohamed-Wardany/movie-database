@@ -1,0 +1,18 @@
+<div class="home-wrapper">
+  <header>
+    <h1>Movie DB</h1>
+    <p>Your gateway to movies, actors & directors.</p>
+  </header>
+
+  <main>
+    <div class="cards">
+      <div class="card" *ngFor="let item of stats">
+        <a [routerLink]="item.path">
+          <div class="icon">{{ item.icon }}</div>
+          <h2>{{ item.title }}</h2>
+          <p class="desc">{{ item.description }}</p>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>

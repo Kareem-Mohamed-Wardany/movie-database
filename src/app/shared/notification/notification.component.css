@@ -1,0 +1,42 @@
+div {
+  position: fixed;
+  bottom: 20px; /* changed from top to bottom */
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  gap: 10px;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+div .icon {
+  font-size: 1.2rem;
+}
+
+div .text {
+  flex: 1;
+}
+
+/* Type-based styles */
+div.info {
+  background-color: #e7f3fe;
+  color: #084298;
+  border-color: #b6d4fe;
+}
+
+div.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-color: #badbcc;
+}
+
+div.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border-color: #f5c2c7;
+}

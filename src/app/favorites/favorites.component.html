@@ -1,0 +1,15 @@
+<div class="favorites-container">
+  <h1>Your Favorite Movies</h1>
+
+  <div class="favorites-grid"></div>
+  @for(fav of favortieList(); track fav.id){
+  <app-favorite-card [fav]="fav" (onDelete)="onChange()" />
+  }
+</div>
+
+@if(favortieList().length===0){
+<div class="no-favorites">
+  <h2>No favorites added yet.</h2>
+  <p>Start adding movies to your favorites to see them here.</p>
+</div>
+}

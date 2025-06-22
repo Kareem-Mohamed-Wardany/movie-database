@@ -1,0 +1,28 @@
+<section class="container">
+  <ul class="sidebar">
+    <li
+      routerLinkActive="selected"
+      [routerLinkActiveOptions]="{ exact: false }"
+    >
+      <a routerLink="/admin/actors"> <i class="fas fa-users"></i> Actors </a>
+    </li>
+    <li
+      routerLinkActive="selected"
+      [routerLinkActiveOptions]="{ exact: false }"
+    >
+      <a routerLink="/admin/directors">
+        <i class="fas fa-video"></i> Directors
+      </a>
+    </li>
+    <li
+      routerLinkActive="selected"
+      [routerLinkActiveOptions]="{ exact: false }"
+    >
+      <a routerLink="/admin/movies"> <i class="fas fa-film"></i> Movies </a>
+    </li>
+  </ul>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</section>

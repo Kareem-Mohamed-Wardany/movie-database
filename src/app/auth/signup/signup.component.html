@@ -1,0 +1,51 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Sign Up</h2>
+
+  <div class="control-row">
+    <div class="control no-margin">
+      <label for="userName">User Name</label>
+      <input id="userName" formControlName="userName" type="text" />
+    </div>
+
+    <div formGroupName="emails">
+      <div class="control no-margin">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" />
+      </div>
+      <div class="control no-margin">
+        <label for="confirmEmail">Confirm Email</label>
+        <input id="confirmEmail" type="email" formControlName="confirmEmail" />
+      </div>
+    </div>
+
+    <div formGroupName="passwords">
+      <div class="control no-margin">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" />
+      </div>
+      <div class="control no-margin">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          formControlName="confirmPassword"
+        />
+      </div>
+    </div>
+
+    <div class="control no-margin">
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" formControlName="phone" />
+    </div>
+    <!--  -->
+    <button class="button" [disabled]="form.invalid">Signup</button>
+    <p class="login-link">
+      Already have an account?
+      <a [routerLink]="['/auth', 'login']">Login here</a>
+    </p>
+  </div>
+
+  @if (form.invalid && form.touched) {
+  <p class="control-error">Invalid form - please check your input data.</p>
+  }
+</form>

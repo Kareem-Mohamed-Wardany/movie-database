@@ -1,0 +1,22 @@
+<section class="director-section">
+  <a routerLink="/admin/directors/add" class="add-button">Add Director</a>
+
+  <div class="director-grid">
+    @for (director of directors(); track director.id) {
+    <div class="director-card">
+      <img [src]="director.image" [alt]="director.name" class="director-img" />
+
+      <h3>{{ director.name }}</h3>
+
+      <div class="director-actions">
+        <button class="action-button update" (click)="onUpdate(director.id)">
+          Update
+        </button>
+        <button class="action-button delete" (click)="onDelete(director.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</section>

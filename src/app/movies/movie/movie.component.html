@@ -1,0 +1,28 @@
+<section>
+  <img [src]="movie().image" [alt]="movie().title" />
+  <h2>{{ movie().title }}</h2>
+  <div class="movie-info">
+    <span><i class="fas fa-tag"></i> {{ movie().genre }}</span>
+    <span><i class="fas fa-clock"></i> {{ movie().duration }} mins</span>
+  </div>
+  <p>{{ movie().description }}</p>
+  <div class="movie-footer">
+    <span class="rating"
+      ><i class="fas fa-star"></i> {{ movie().rate }}/10</span
+    >
+    <span class="director"
+      ><i class="fas fa-user"></i> {{ movie().directorName }}</span
+    >
+  </div>
+  @if(authService.isLoggedIn()) { @if(isFavorite()){
+  <button (click)="onUnfavorite()" class="remove-favorite">
+    <i class="fas fa-heart"></i> Remove From Favorite
+  </button>
+
+  }@else{
+  <button (click)="onFavorite()">
+    <i class="fas fa-heart"></i> Add to Favorite
+  </button>
+
+  } }
+</section>

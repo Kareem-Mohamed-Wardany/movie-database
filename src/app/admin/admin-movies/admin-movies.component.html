@@ -1,0 +1,28 @@
+<section class="movie-section">
+  <a routerLink="/admin/movies/add" class="add-button">Add Movie</a>
+
+  <div class="movie-grid">
+    @for (movie of movies(); track movie.id) {
+    <div class="movie-card">
+      <img [src]="movie.image" [alt]="movie.title" class="movie-img" />
+
+      <div class="movie-info">
+        <h3>{{ movie.title }}</h3>
+        <p><strong>Genre:</strong> {{ movie.genre }}</p>
+        <p><strong>Director:</strong> {{ movie.directorName }}</p>
+        <p><strong>Duration:</strong> {{ movie.duration }} min</p>
+        <p><strong>Rate:</strong> {{ movie.rate }}/10</p>
+      </div>
+
+      <div class="movie-actions">
+        <button class="action-button update" (click)="onUpdate(movie.id)">
+          Update
+        </button>
+        <button class="action-button delete" (click)="onDelete(movie.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</section>

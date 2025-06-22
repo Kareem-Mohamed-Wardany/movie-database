@@ -1,0 +1,28 @@
+<ul class="favorite-list">
+  <li class="favorite-list-item">
+    <article class="favorite-card">
+      <img
+        class="movie-image"
+        [src]="fav().image"
+        [alt]="fav().title"
+        loading="lazy"
+      />
+
+      <div class="movie-info">
+        <h2>{{ fav().title }}</h2>
+        <p class="description">{{ fav().description }}</p>
+
+        <ul class="movie-details">
+          <li><strong>Genre:</strong> {{ fav().genre }}</li>
+          <li><strong>Duration:</strong> {{ fav().duration }} minutes</li>
+          <li><strong>Rating:</strong> {{ fav().rate }}</li>
+          <li><strong>Director:</strong> {{ fav().directorName }}</li>
+          <li>
+            <strong>Added:</strong> {{ fav().createdDate | date : "fullDate" }}
+          </li>
+        </ul>
+        <button (click)="onRemove()">Remove</button>
+      </div>
+    </article>
+  </li>
+</ul>

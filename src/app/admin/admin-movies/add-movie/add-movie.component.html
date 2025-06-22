@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-section">
+  <label for="title">Movie Title</label>
+  <input type="text" id="title" formControlName="title" />
+
+  <label for="description">Movie Description</label>
+  <input type="text" id="description" formControlName="description" />
+
+  <label for="genre">Movie Genre</label>
+  <select id="genre" formControlName="genre">
+    @for (genre of genres; track $index) {
+    <option [value]="genre">{{ genre }}</option>
+    }
+  </select>
+
+  <label for="duration">Movie Duration (minutes)</label>
+  <input type="number" id="duration" formControlName="duration" />
+
+  <label for="rate">Movie Rate</label>
+  <input type="number" id="rate" formControlName="rate" step="0.1" />
+
+  <label for="directorId">Movie Director</label>
+  <select id="directorId" formControlName="directorId">
+    @for (d of directors(); track $index) {
+    <option [value]="d.id">{{ d.name }}</option>
+    }
+  </select>
+  <label for="image">Movie Poster</label>
+  <input
+    type="file"
+    id="image"
+    (change)="onImageSelected($event)"
+    accept="image/*"
+  />
+  @if(imagePreview){
+  <div class="preview-container">
+    <p>Preview:</p>
+    <img [src]="imagePreview" alt="Image Preview" class="preview-image" />
+  </div>
+  }
+
+  <button type="submit" [disabled]="form.invalid">Add Movie</button>
+</form>

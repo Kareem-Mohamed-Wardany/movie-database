@@ -1,0 +1,23 @@
+<section class="movie-grid">
+  @for (movie of movies(); track movie.id) {
+  <app-movie
+    [movie]="movie"
+    [favoritesList]="favortieList()"
+    (favoriteChanged)="onChange()"
+  ></app-movie>
+  }
+</section>
+
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage() === 1">Prev</button>
+
+  @for (page of pages(); track page) {
+  <button [class.active]="currentPage() === page" (click)="goToPage(page)">
+    {{ page }}
+  </button>
+  }
+
+  <button (click)="nextPage()" [disabled]="currentPage() === totalPages()">
+    Next
+  </button>
+</div>
