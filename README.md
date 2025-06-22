@@ -11,8 +11,8 @@ Movie Listing: Fetches and displays a grid of movies with posters, titles, and r
 - Routing: Angular Router to navigate between movie list and detail pages effortlessly.
 
 ## Technologies Used
--Angular 18
--TypeScript
+- Angular 18
+- TypeScript
 - CSS for styling
 - RxJS for reactive API calls
 - Angular Router for navigation
