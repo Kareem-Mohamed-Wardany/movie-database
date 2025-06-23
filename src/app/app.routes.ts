@@ -8,6 +8,7 @@ import { AdminComponent } from './admin/admin.component';
 import { adminRoutes } from './admin/admin.routes';
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { canMatchAdmin, canMatchLogged } from './auth/auth.gaurd';
 
 export const routes: Routes = [
   {
@@ -19,6 +20,7 @@ export const routes: Routes = [
     path: 'favorites',
     component: FavoritesComponent,
     title: 'Your Favorites',
+    canMatch: [canMatchLogged],
   },
   {
     path: 'movies',
@@ -40,6 +42,7 @@ export const routes: Routes = [
     component: AdminComponent,
     title: 'Admin Panel',
     children: adminRoutes,
+    canMatch: [canMatchLogged, canMatchAdmin],
   },
   {
     path: 'auth/login',
