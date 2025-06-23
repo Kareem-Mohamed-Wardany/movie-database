@@ -1,4 +1,25 @@
 # MovieDatabase
+## Angular 18 Movie Database App
+This project is a sleek and modern Angular 18 application designed to consume and display data from a Movie Database API. It provides a clean user interface to browse through movies, view detailed information about each movie, and interact with the backend API endpoints seamlessly.
+
+## Key Features
+Movie Listing: Fetches and displays a grid of movies with posters, titles, and release dates.
+
+- Movie Details: Detailed view of a selected movie, showing description, images, and more.
+- API Integration: Clean and reusable Angular service layer to communicate with your custom Movie Database API.
+- Responsive Design: Stylish SCSS-based layout that works across devices.
+- Routing: Angular Router to navigate between movie list and detail pages effortlessly.
+
+## Technologies Used
+- Angular 18
+- TypeScript
+- CSS for styling
+- RxJS for reactive API calls
+- Angular Router for navigation
+
+### This app serves as a solid frontend framework to build on top of your Movie Database API, ideal for demo, prototype, or production use.
+
+# Installation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
 
